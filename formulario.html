@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+	<link rel="stylesheet" type="text/css" href="form.css"/>
+	<script type="text/javascript" src="validaciones_usuarios.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+	
+	<style type="text/css">
+		.error{
+			color: red;
+			font-size: 8px;
+		}
+	</style>
+</head>
+	<body>
+
+		<form id="formulario001" method="POST" action="" onsubmit="return validarCamposObligatorios();" >
+		<label>Cedula</label>
+		<input type="text" id="cedula" placeholder="# de cedula" name="numero" onkeypress='return soloNumeros(event)' />
+		<span id="mensajeCedula" class="error"></span>	
+		<br>
+		<label>Nombres</label>
+		<input  id="nombres"  type="text" placeholder="Nombres" name="nombredelacaja" onkeypress="return soloLetras(event)"/>
+		<span id='mensajeNombres' class="error"></span>
+		<br>
+		<label>Apellidos</label>
+		<input id="apellidos" type="text" placeholder="Apellidos"  name="nombredelacaja" onkeypress="return soloLetras(event)">
+		<span id='mensajeApellidos' class="error"></span>
+		<br>
+		<label>Direccion</label>
+		<input type="text" placeholder="Direccion" name="nombredelacaja" id="direccion">
+		<span id='mensajeDireccion' class="error"></span>
+		<br>
+		<label>Telefonos</label>
+		<input type="text" placeholder="Telefono" name="nombredelacaja" id="telefonos" onkeypress="return soloNumeros(event)"  onkeyup="return validarTelefono(this)"  />
+		<span id='mensajeTelefono' class="error"></span>
+		<br>
+		<label>Fecha de Nacimiento<label>
+		<input id="fecha_nac" type="text" placeholder="15/11/1998" name="nombredelacaja" />
+		<span id='mensajeFecha' class="error"></span>
+		<br>
+		<label>Correo Electronico</label>
+		<input type="text" name="nombredelacaja" placeholder="example@ups.edu.ec" id="correo" >
+		<span id='mensajeCorreo' class="error"></span>
+		<br>
+		<label>Contrasena</label>
+		<input type="password" name="nombredelacaja" id="password"/>
+		<span id='mensajePassword' class="error"></span>
+		<input onclick="validar()" id="boton" type="submit" value="Enviar">
+		
+		</form>
+</body>
+</html>
